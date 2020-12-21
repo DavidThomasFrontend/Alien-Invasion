@@ -30,6 +30,7 @@ def run_game(self):
     
     while True:
             self._check_events()
+            self.ship.update()
             self._update_screen()
 
 
@@ -44,7 +45,9 @@ def run_game(self):
                     self.ship.moving_right = True
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_RIGHT:
-                    self.ship.moving_right = False        
+                    self.ship.moving_right = False
+                elif event.key == pygame.K_LEFt:
+                    self.ship.moving_left   
                     # Move the ship to the right.
                     self.ship.rect.x += 1
 
